@@ -1,3 +1,5 @@
+ //<>//
+
 import processing.sound.*;
 import processing.serial.*;
 SoundFile note_do;
@@ -25,7 +27,7 @@ void setup() {
   background(255);
   
    String portName = "/dev/ttyUSB0"; //change the 0 to a 1 or 2 etc. to match your port
-  myPort = new Serial(this, portName, 115200);
+  myPort = new Serial(this, portName, 9600);
   
   
   note_do = new SoundFile(this, "do1.mp3");
@@ -47,36 +49,32 @@ void draw() {
   fill(0);
   text("press a!",10,110);
       
+  while ( myPort.available() > 0) 
+  {
       
-  while (myPort.available() > 0) {
-    val = myPort.readString(); 
-  //val = myPort.readStringUntil('\n');         // read it and store it in val
-  println(val);
-  
-  
-  if(val.equals("a\n"))
-  {
-    fill(0);
-    text("press s!",10,120);
-    note_do.play();
-    note_re.stop();
-    note_mi.stop();
-    note_fa.stop();
-    note_sol.stop();
-    note_la.stop();
-    note_si.stop();
+    val = myPort.readStringUntil('\n');
+   
     
-  }
-  if(val.equals("n\n"))
-  {
-    fill(0);
-    text("pls a!",100,120);
-  }
-  
-  }
-  
-  
-  
     
+    if(val.equals("a\n"))
+    {
+      fill(0);
+      text("press s!",10,120);
+      note_do.play();
+      note_re.stop();
+      note_mi.stop();
+      note_fa.stop();
+      note_sol.stop();
+      note_la.stop();
+      note_si.stop();
+    
+    }
+    if(val.equals("n\n"))
+    {
+      fill(0);
+      text("pls a!",100,120);
+      
+    }
+  }
   
 }
