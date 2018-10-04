@@ -12,7 +12,13 @@ void loop() {
   if (analogRead(A0) < 800)
   {
      tone(sound, 523, 130);
-     Serial.println( analogRead(A0));
+     //Serial.println( analogRead(A0));
+     Serial.println("a");
      delay(80);
+  }
+  else
+  {
+    Serial.println("n");
+    
   }
 }
