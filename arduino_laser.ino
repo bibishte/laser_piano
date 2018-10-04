@@ -13,12 +13,13 @@ void loop() {
   {
      tone(sound, 523, 130);
      //Serial.println( analogRead(A0));
-     Serial.println("a");
-     delay(80);
+     Serial.println("a\n");
+     delay(100);
   }
   else
   {
-    Serial.println("n");
+    Serial.println("n\n");
+    delay(100);
     
   }
 }
