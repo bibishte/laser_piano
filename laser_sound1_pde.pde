@@ -54,7 +54,7 @@ void draw() {
   println(val);
   
   
-  if(val=="a\n")
+  if(val.equals("a\n"))
   {
     fill(0);
     text("press s!",10,120);
@@ -67,7 +67,7 @@ void draw() {
     note_si.stop();
     
   }
-  if(val=="n\n")
+  if(val.equals("n\n"))
   {
     fill(0);
     text("pls a!",100,120);
