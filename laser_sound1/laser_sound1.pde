@@ -45,18 +45,19 @@ void setup() {
 
 void draw() { 
   background(255);
+  frameRate(500);
   
   fill(0);
   text("press a!",10,110);
       
   while ( myPort.available() > 0) 
   {
-      
+    
     val = myPort.readStringUntil('\n');
    
     
     
-    if(val.equals("a\n"))
+    /*if(val.equals("a\n"))
     {
       fill(0);
       text("press s!",10,120);
@@ -137,7 +138,87 @@ void draw() {
       fill(0);
       text("pls a!",100,120);
       
+    }*/
+    
+    
+    
+    if(val.charAt(0)=='A')
+    {
+      fill(0);
+      text("press s!",10,120);
+      note_do.play();
+      note_re.stop();
+      note_mi.stop();
+      note_fa.stop();
+      note_sol.stop();
+      note_la.stop();
+      note_si.stop();
     }
+    
+    
+    if(val.charAt(1)=='S')
+    {
+      fill(0);
+      text("press s!",10,120);
+      note_do.stop();
+      note_re.play();
+      note_mi.stop();
+      note_fa.stop();
+      note_sol.stop();
+      note_la.stop();
+      note_si.stop();
+    }
+    
+    
+    if(val.charAt(2)=='D')
+    {
+      fill(0);
+      text("press s!",10,120);
+      note_do.stop();
+      note_re.stop();
+      note_mi.play();
+      note_fa.stop();
+      note_sol.stop();
+      note_la.stop();
+      note_si.stop();
+    }
+    
+    
+    if(val.charAt(3)=='F')
+    {
+      fill(0);
+      text("press s!",10,120);
+      note_do.stop();
+      note_re.stop();
+      note_mi.stop();
+      note_fa.play();
+      note_sol.stop();
+      note_la.stop();
+      note_si.stop();
+    }
+    
+    
+    if(val.charAt(4)=='G')
+    {
+      fill(0);
+      text("press s!",10,120);
+      note_do.stop();
+      note_re.stop();
+      note_mi.stop();
+      note_fa.stop();
+      note_sol.play();
+      note_la.stop();
+      note_si.stop();
+    }
+    
+    if(val.charAt(0)=='A' || val.charAt(1)=='S' || val.charAt(2)=='D' ||val.charAt(3)=='F' || val.charAt(4)=='G')
+    {
+      if(val.charAt(0)=='A')
+      {
+           myPort.write('d');
+      }
+    }
+    
   }
   
 }
