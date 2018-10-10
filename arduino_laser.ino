@@ -12,54 +12,71 @@ void setup() {
 }
 
 void loop() {
-  //Serial.println(analogRead(A0));
+  String cmd="asdfg";
+  //Serial.println(analogRead(A1));
   
   if (analogRead(NOTE_1) < 900)
   {
      tone(sound, 523, 130);
      //Serial.println( analogRead(A0));
-     Serial.println("a\n");
-     delay(1000);
-     return;
+     Serial.print("A");
+     
   }
+  else{
+     Serial.print("a");
+  }
+  
   if (analogRead(NOTE_2) < 900)
   {
       tone(8, 587, 130);
      //Serial.println( analogRead(A0));
-     Serial.println("s\n");
-     delay(1000);
-     return;
+     Serial.print("S");
+  }
+  else
+  {
+    Serial.print("s");
   }
 
   if (analogRead(NOTE_3) < 900)
   {
      tone(8, 659, 130);
      //Serial.println( analogRead(A0));
-     Serial.println("d\n");
-     delay(1000);
-     return;
+     Serial.print("D");
+  }
+  else
+  {
+    Serial.print("d");
   }
 
   if (analogRead(NOTE_4) < 900)
   {
      tone(8, 699, 130);
      //Serial.println( analogRead(A0));
-     Serial.println("f\n");
-     delay(1000);
-     return;
+     Serial.print("F");
+  }
+  else
+  {
+
+    Serial.print("f");
   }
 
   if (analogRead(NOTE_5) < 900)
   {
      tone(8, 784, 130);
      //Serial.println( analogRead(A0));
-     Serial.println("g\n");
-     delay(1000);
-     return;
+     Serial.println("G");
+     delay(200);
+  }
+  else
+  {
+    Serial.println("g");
+     delay(200);
   }
   
-  Serial.println("n\n");
-  delay(100);
+  //Serial.println("n\n");
+  //delay(100);
+
+  //Serial.println(cmd);
     
   
 }
